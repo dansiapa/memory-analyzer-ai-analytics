@@ -1,0 +1,50 @@
+2026-06-18 16:00:00
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.301-b09 mixed mode):
+
+"http-nio-8080-exec-1" #45 daemon prio=5 os_prio=0 tid=0x00007f1a2c0a8800 nid=0x1a03 runnable [0x00007f1a0c1fe000]
+   java.lang.Thread.State: RUNNABLE
+	at com.example.service.InventoryService.reserveStock(InventoryService.java:55)
+	- locked <0x000000061ffaaaaa> (a com.example.service.InventoryService)
+	at com.example.controller.CheckoutController.checkout(CheckoutController.java:30)
+
+"http-nio-8080-exec-2" #46 daemon prio=5 os_prio=0 tid=0x00007f1a2c0aa000 nid=0x1a04 waiting for monitor entry [0x00007f1a0c0fd000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.example.service.InventoryService.reserveStock(InventoryService.java:50)
+	- waiting to lock <0x000000061ffaaaaa> (a com.example.service.InventoryService)
+	at com.example.controller.CheckoutController.checkout(CheckoutController.java:30)
+
+"http-nio-8080-exec-3" #47 daemon prio=5 os_prio=0 tid=0x00007f1a2c0ab800 nid=0x1a05 waiting for monitor entry [0x00007f1a0bffc000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.example.service.InventoryService.reserveStock(InventoryService.java:50)
+	- waiting to lock <0x000000061ffaaaaa> (a com.example.service.InventoryService)
+	at com.example.controller.CheckoutController.checkout(CheckoutController.java:30)
+
+"http-nio-8080-exec-4" #48 daemon prio=5 os_prio=0 tid=0x00007f1a2c0ac800 nid=0x1a06 waiting for monitor entry [0x00007f1a0beec000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.example.service.InventoryService.reserveStock(InventoryService.java:50)
+	- waiting to lock <0x000000061ffaaaaa> (a com.example.service.InventoryService)
+	at com.example.controller.CheckoutController.checkout(CheckoutController.java:30)
+
+"http-nio-8080-exec-5" #49 daemon prio=5 os_prio=0 tid=0x00007f1a2c0ad800 nid=0x1a07 waiting for monitor entry [0x00007f1a0bddc000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.example.service.InventoryService.reserveStock(InventoryService.java:50)
+	- waiting to lock <0x000000061ffaaaaa> (a com.example.service.InventoryService)
+	at com.example.controller.CheckoutController.checkout(CheckoutController.java:30)
+
+"http-nio-8080-exec-6" #52 daemon prio=5 os_prio=0 tid=0x00007f1a2c0af800 nid=0x1a09 runnable [0x00007f1a0bccc000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at org.apache.coyote.http11.Http11InputBuffer.fill(Http11InputBuffer.java:805)
+
+"db-pool-thread-1" #70 daemon prio=5 os_prio=0 tid=0x00007f1a2c0b1000 nid=0x1a0a runnable [0x00007f1a0baaa000]
+   java.lang.Thread.State: WAITING (on condition)
+	at sun.misc.Unsafe.park(Native Method)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:200)
+	at com.example.dao.OrderDao.findById(OrderDao.java:40)
+
+"db-pool-thread-2" #71 daemon prio=5 os_prio=0 tid=0x00007f1a2c0b2000 nid=0x1a0b runnable [0x00007f1a0b999000]
+   java.lang.Thread.State: WAITING (on condition)
+	at sun.misc.Unsafe.park(Native Method)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:200)
+	at com.example.dao.OrderDao.findById(OrderDao.java:40)

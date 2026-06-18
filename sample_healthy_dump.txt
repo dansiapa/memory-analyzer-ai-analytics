@@ -1,0 +1,14 @@
+2026-06-18 15:00:00
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.301-b09 mixed mode):
+
+"main" #1 prio=5 os_prio=0 tid=0x00007f1a2c000800 nid=0x1a00 runnable [0x00007f1a3a1d4000]
+   java.lang.Thread.State: RUNNABLE
+	at com.example.MainApp.run(MainApp.java:30)
+
+"GC Thread#0" #9 daemon prio=8 os_prio=0 tid=0x00007f1a2c002000 nid=0x1a02 runnable
+   java.lang.Thread.State: RUNNABLE
+
+"http-nio-8080-exec-1" #45 daemon prio=5 os_prio=0 tid=0x00007f1a2c0a8800 nid=0x1a03 runnable [0x00007f1a0c1fe000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)

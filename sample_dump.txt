@@ -1,0 +1,54 @@
+2026-06-18 14:32:01
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.301-b09 mixed mode):
+
+"http-nio-8080-exec-1" #45 daemon prio=5 os_prio=0 cpu=1234.56ms elapsed=320.12s tid=0x00007f1a2c0a8800 nid=0x1a03 waiting for monitor entry [0x00007f1a0c1fe000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.example.service.OrderService.processOrder(OrderService.java:88)
+	- waiting to lock <0x000000061ff12345> (a com.example.service.OrderService)
+	at com.example.controller.OrderController.create(OrderController.java:42)
+	at com.example.controller.OrderController$$FastClassBySpringCGLIB.invoke(<generated>)
+
+"http-nio-8080-exec-2" #46 daemon prio=5 os_prio=0 cpu=998.10ms elapsed=320.10s tid=0x00007f1a2c0aa000 nid=0x1a04 waiting for monitor entry [0x00007f1a0c0fd000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.example.service.OrderService.processOrder(OrderService.java:88)
+	- waiting to lock <0x000000061ff12345> (a com.example.service.OrderService)
+	at com.example.controller.OrderController.create(OrderController.java:42)
+
+"http-nio-8080-exec-3" #47 daemon prio=5 os_prio=0 cpu=2.10ms elapsed=320.00s tid=0x00007f1a2c0ab800 nid=0x1a05 runnable [0x00007f1a0bffc000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at org.apache.coyote.http11.Http11InputBuffer.fill(Http11InputBuffer.java:805)
+
+"pool-2-thread-1" #50 prio=5 os_prio=0 cpu=10.00ms elapsed=300.00s tid=0x00007f1a2c0ac000 nid=0x1a08 in Object.wait() [0x00007f1a0bef0000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x000000061ff99999> (a java.util.TaskQueue)
+	at java.util.TimerThread.mainLoop(Timer.java:552)
+
+"pool-2-thread-2" #51 prio=5 os_prio=0 cpu=9.00ms elapsed=300.00s tid=0x00007f1a2c0ad000 nid=0x1a09 in Object.wait() [0x00007f1a0bdf0000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x000000061ff99999> (a java.util.TaskQueue)
+	at java.util.TimerThread.mainLoop(Timer.java:552)
+
+"DestroyJavaVM" #60 prio=5 os_prio=0 cpu=0.50ms elapsed=321.00s tid=0x00007f1a2c001000 nid=0x1a01 runnable
+   java.lang.Thread.State: RUNNABLE
+
+"main" #1 prio=5 os_prio=0 cpu=500.00ms elapsed=321.00s tid=0x00007f1a2c000800 nid=0x1a00 sleeping [0x00007f1a3a1d4000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at com.example.MainApp.run(MainApp.java:30)
+
+Found one Java-level deadlock:
+=============================
+"http-nio-8080-exec-1":
+  waiting to lock monitor 0x00007f1a0c001234 (object 0x000000061ff12345, a com.example.service.OrderService),
+  which is held by "http-nio-8080-exec-2"
+"http-nio-8080-exec-2":
+  waiting to lock monitor 0x00007f1a0c005678 (object 0x000000061ff54321, a com.example.service.PaymentService),
+  which is held by "http-nio-8080-exec-1"
+
+Java stack information for the threads listed above:
+===================================================
+
