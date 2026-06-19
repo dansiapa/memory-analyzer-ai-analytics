@@ -1,6 +1,3 @@
-Berikut adalah seluruh isi konten untuk file `README.md` yang telah diperbarui dan disatukan secara utuh agar Anda bisa langsung menyalinnya ke dalam satu file `.md`:
-
-```markdown
 # Thread Dump Analyzer
 
 A local, offline desktop tool for analyzing Java thread dumps (`.txt` files from `jstack`, `jcmd Thread.print`, `kill -3`, etc.) — similar in spirit to [fastthread.io](https://fastthread.io), but runs entirely on your machine, no upload required.
@@ -118,7 +115,3 @@ kill -3 <pid>
 `parser.py` has zero dependency on Tkinter, so it can be reused or unit tested independently.
 
 It handles dumps from HotSpot-family JVMs (Oracle JDK, OpenJDK, Temurin, Corretto, Zulu) in the standard `jstack`-style format. If your dump comes from a different tool with a noticeably different layout, some fields (priority, tid, nid) may show as blank, but thread names, states and stack traces will still parse correctly since those are matched independently.
-
-```
-
-```
